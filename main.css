@@ -1,0 +1,37 @@
+
+
+
+
+body{width:20vw;
+padding: 5vw 37vw;
+    
+}
+
+.display{adding:2vw;
+flex: 1 75%;
+color:white;
+
+
+}
+
+#buttons{
+    display:flex;
+    flex-wrap:wrap
+
+}
+
+.operators{background-color:#82C276;
+padding:2vw;
+flex: 1 25%;
+color:black;
+}
+
+button{ background-color:#64B255;
+padding:2vw;
+flex: 1 25%;
+color:white}
+
+
+
+
+
