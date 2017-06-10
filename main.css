@@ -11,11 +11,13 @@ padding: 5vw 37vw;
 flex: 1 53%;
 background-color:#64B255;
 color:white;
+text-align:right;
+
 
 
 }
 
-#clear:hover{
+.clear:hover{
     background-color :#82C276
 }
 
