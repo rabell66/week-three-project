@@ -1,110 +1,112 @@
 
 var calculate = []
-var num = 0
-var calc = ""
-var current =""
+var inputNum = 0
+var displayNumber = ""
+var currentNumber =""
 
 
 
-	function showInput(x) {
-         num = x;
+	function showInput(inputValue) {
+         inputNum = inputValue;
         
          
         
         
-     if (num >10 && calc == ""){
-             num == 10}
+     if (inputNum >10 && displayNumber == ""){
+             inputNum == 10}
          
          
-            else if (num == 10){ 
+            else if (inputNum == 10){ 
                 document.querySelector(".display").innerHTML = ""
                 calculate=[];
-                num = 0;
-                calc =""}
-        
+                inputNum = 0;
+                displayNumber =""
+                currentNumber = ""}
+                
         
 
-         else if(num == 11 && current =="z"){  
+         else if(inputNum == 11 && currentNumber =="yes"){  
                 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"-";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("-");
-                current = ""}
+                currentNumber = ""}
                 
-            else if(num == 11){
+            else if(inputNum == 11){
                                     
-                calculate.push(Number(calc))               
+                calculate.push(Number(displayNumber))               
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"-";
-                calc = "";
+                inputNum = 0
+                displayNumber = "";
                 calculate.push("-");}
           
                 
-            else if(num == 12 && current =="z"){  
+            else if(inputNum == 12 && currentNumber =="yes"){  
 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"*";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("*")
-                current = ""} 
+                currentNumber = ""} 
             
-            else if(num == 12){
+            else if(inputNum == 12){
                 
-                calculate.push(Number(calc))
+                calculate.push(Number(displayNumber))
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"*";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("*");
-                current = ""}
+                currentNumber = ""}
             
-             else if(num == 13 && current =="z"){  
+             else if(inputNum == 13 && currentNumber =="yes"){  
                 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"/";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("/")
-                current = ""} 
+                currentNumber = ""} 
 
-            else if(num == 13 ){
+            else if(inputNum == 13 ){
                                
-                calculate.push(Number(calc))
+                calculate.push(Number(displayNumber))
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"/";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("/")}
            
-            else if(num == 14 && current =="z"){  
+            else if(inputNum == 14 && currentNumber =="yes"){  
 
-                console.log(num);
+                
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("+")
-                current = ""} 
+                currentNumber = ""} 
             
-            else if(num == 14){
+            else if(inputNum == 14){
             
-                calculate.push(Number(calc))
+                calculate.push(Number(displayNumber))
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";
-                calc = "";
-                num = 0;
+                displayNumber = "";
+                inputNum = 0;
                 calculate.push("+");}
                        
              
-            else if (num ==15){
+            else if (inputNum ==15){
             
-                calculate.push(Number(calc))         
+                calculate.push(Number(displayNumber))         
                 equation();
                 addition();
-                document.querySelector(".display").innerHTML= z;         
-                current = "z"
-                console.log(z)
-                console.log(calculate);}
+                document.querySelector(".display").innerHTML= answer;         
+                currentNumber = "yes"}
+                
    
 
             else  {
-                document.querySelector(".display").innerHTML = document.querySelector(".display").innerHTML+num;
-                calc = calc + "" + num;}
+                
+                document.querySelector(".display").innerHTML = document.querySelector(".display").innerHTML+inputNum;
+                displayNumber = displayNumber + "" + inputNum;}
             
                     
             
@@ -122,14 +124,14 @@ var current =""
              for(let i=1; i<=calculate.length;i+2){
                
                   console.log(i);
-                    if (calculate[i]=="/"){ z = (calculate[i-1])/(calculate[i+1])
+                    if (calculate[i]=="/"){ answer = (calculate[i-1])/(calculate[i+1])
                         
-                        calculate.splice((i-1),3,z);
+                        calculate.splice((i-1),3,answer);
                             console.log(calculate);}
              
                         
-                    else if (calculate[i]=="*"){z = (calculate[i-1])*(calculate[i+1])
-                            calculate.splice((i-1),3,z);
+                    else if (calculate[i]=="*"){answer = (calculate[i-1])*(calculate[i+1])
+                            calculate.splice((i-1),3,answer);
                              console.log(calculate);}
                     else     {i=i+1}
                     
@@ -143,9 +145,9 @@ var current =""
  
               for(let i=1; i<calculate.length;i+2){  
  
-                     if  (calculate[i]=="+"){z = (calculate[i-1])+(calculate[i+1])
+                     if  (calculate[i]=="+"){answer = (calculate[i-1])+(calculate[i+1])
                            
-                            calculate.splice((i-1),3,z);
+                            calculate.splice((i-1),3,answer);
                         console.log(calculate);}
                          
                     else 
@@ -154,6 +156,7 @@ var current =""
                         console.log(calculate);}
                     
              }
+             function 
                
          }
     }          
