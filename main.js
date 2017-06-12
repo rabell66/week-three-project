@@ -5,15 +5,12 @@ var displayNumber = ""
 var currentNumber =""
 
 
-
 	function showInput(inputValue) {
          inputNum = inputValue;
-        
-         
-        
-        
-     if (inputNum >10 && displayNumber == ""){
-             inputNum == 10}
+             
+     
+       if (inputNum >10 && displayNumber == ""){
+                inputNum == 10}
          
          
             else if (inputNum == 10){ 
@@ -23,98 +20,79 @@ var currentNumber =""
                 displayNumber =""
                 currentNumber = ""}
                 
-        
 
-         else if(inputNum == 11 && currentNumber =="yes"){  
+        
+           else if(inputNum == 11 && currentNumber =="yes"){  
                 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"-";
-                displayNumber = "";
-                inputNum = 0;
-                calculate.push("-");
-                currentNumber = ""}
-                
+                calculate.push("-"); 
+                currentNumberYes();}
+
+
             else if(inputNum == 11){
                                     
-                calculate.push(Number(displayNumber))               
+                currentNumberNo()               
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"-";
-                inputNum = 0
-                displayNumber = "";
                 calculate.push("-");}
-          
+                
                 
             else if(inputNum == 12 && currentNumber =="yes"){  
 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"*";
-                displayNumber = "";
-                inputNum = 0;
                 calculate.push("*")
-                currentNumber = ""} 
+                currentNumberYes()
+            } 
             
             else if(inputNum == 12){
                 
-                calculate.push(Number(displayNumber))
+                currentNumberNo()
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"*";
-                displayNumber = "";
-                inputNum = 0;
-                calculate.push("*");
-                currentNumber = ""}
+                calculate.push("*");}
             
+
              else if(inputNum == 13 && currentNumber =="yes"){  
                 
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"/";
-                displayNumber = "";
-                inputNum = 0;
                 calculate.push("/")
-                currentNumber = ""} 
+                currentNumberYes()} 
 
-            else if(inputNum == 13 ){
+
+             else if(inputNum == 13 ){
                                
-                calculate.push(Number(displayNumber))
+                currentNumberNo()
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"/";
-                displayNumber = "";
-                inputNum = 0;
                 calculate.push("/")}
            
-            else if(inputNum == 14 && currentNumber =="yes"){  
+             else if(inputNum == 14 && currentNumber =="yes"){  
 
                 
-                document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";
-                displayNumber = "";
-                inputNum = 0;
+                document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";              
                 calculate.push("+")
-                currentNumber = ""} 
+                currentNumberYes()} 
             
-            else if(inputNum == 14){
+             else if(inputNum == 14){
             
-                calculate.push(Number(displayNumber))
+                currentNumberNo()
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";
-                displayNumber = "";
-                inputNum = 0;
                 calculate.push("+");}
                        
              
-            else if (inputNum ==15){
+             else if (inputNum ==15){
             
                 calculate.push(Number(displayNumber))         
                 equation();
                 addition();
                 document.querySelector(".display").innerHTML= answer;         
                 currentNumber = "yes"}
+            
                 
-   
-
-            else  {
+             else  {
                 
                 document.querySelector(".display").innerHTML = document.querySelector(".display").innerHTML+inputNum;
                 displayNumber = displayNumber + "" + inputNum;}
             
                     
-            
-    
-
-    
-
-
+        
 
          function equation(){
               console.log(calculate);
@@ -124,7 +102,7 @@ var currentNumber =""
              for(let i=1; i<=calculate.length;i+2){
                
                   console.log(i);
-                    if (calculate[i]=="/"){ answer = (calculate[i-1])/(calculate[i+1])
+                    if (calculate[i]=="/"){answer = (calculate[i-1])/(calculate[i+1])
                         
                         calculate.splice((i-1),3,answer);
                             console.log(calculate);}
@@ -151,17 +129,32 @@ var currentNumber =""
                         console.log(calculate);}
                          
                     else 
-                       { z = (calculate[i-1])-(calculate[i+1])
-                            calculate.splice((i-1),3,z);
+                       { answer = (calculate[i-1])-(calculate[i+1])
+                            calculate.splice((i-1),3,answer);
                         console.log(calculate);}
-                    
+              }  
              }
-             function 
-               
-         }
-    }          
+
+            function currentNumberYes(){
+                displayNumber = "";
+                inputNum = 0;                        
+                currentNumber = "";
+                length++;
+            }
+            function currentNumberNo(){
+                 calculate.push(Number(displayNumber))         
+                 displayNumber = "";          
+                 inputNum = 0;
+                 length++;
+            }
             
-               
+
+            }
+
+             
+             
+            
+     
                         
              
                
