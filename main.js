@@ -72,14 +72,21 @@ var currentNumber =""
             
              else if(inputNum == 14){
             
-                currentNumberNo()
+                currentNumberNo();
                 document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+"+";
                 calculate.push("+");}
-                       
+
+
+            else if (inputNum == 16){
+                currentNumberNo();
+                document.querySelector(".display").innerHTML=document.querySelector(".display").innerHTML+".";
+                calculate.push(".");}
+            
              
              else if (inputNum ==15){
-            
-                calculate.push(Number(displayNumber))         
+                
+                calculate.push(Number(displayNumber))  
+                decimal();       
                 equation();
                 addition();
                 document.querySelector(".display").innerHTML= answer;         
@@ -90,6 +97,7 @@ var currentNumber =""
                 
                 document.querySelector(".display").innerHTML = document.querySelector(".display").innerHTML+inputNum;
                 displayNumber = displayNumber + "" + inputNum;}
+                
             
                     
         
@@ -146,6 +154,18 @@ var currentNumber =""
                  displayNumber = "";          
                  inputNum = 0;
                  length++;
+            }
+
+            function decimal(){
+                
+                for(i=0; i< calculate.length;i++){
+                    console.log(calculate)
+                 if (calculate[i] =="."){
+                     decimalNumber = Number((calculate[i-1])+(calculate[i])+(calculate[i+1]))
+                     calculate.splice((i-1),3,decimalNumber);
+                     console.log(calculate);
+                 }
+                }
             }
             
 
